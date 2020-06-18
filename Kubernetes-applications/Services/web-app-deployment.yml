@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      dev: web-app-pod
+  template:
+    metadata:
+      labels:
+        dev: web-app-pod
+    spec:       
+      containers:
+      - name: web-app-container
+        image: pbadhe34/training:webapp
+        ports:
+        - containerPort: 9090          

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: user-web-pod
+  template:
+    metadata:
+      labels:
+        app: user-web-pod
+    spec:       
+      containers:
+      - name: user-app-container
+        image: pbadhe34/training:user-app
+        ports:
+        - containerPort: 8090          

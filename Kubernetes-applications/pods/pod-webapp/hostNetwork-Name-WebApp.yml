@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webnw-pod-name
+spec:
+  hostNetwork: true
+  containers:
+    - name:  web-container
+      image: pbadhe34/training:webapp
+      ports:
+        - containerPort: 9090  
+
+  
+
